@@ -1,11 +1,12 @@
 import React from "react";
-import PostsTable from "../../components/PostsTable/PostsTable"
-
-
+import NotFound from "components/NotFound/NotFound";
 export default function HomePage() {
   return (
     <div>
- <PostsTable />
+     {/* <NotFound />
+      */}
+
+      Homepage
     </div>
   );
 }

@@ -1,12 +1,16 @@
 import { useRoutes } from "react-router-dom";
 import HomePage from "pages/Home/HomePage";
-// import { Inbox  , CustomerRequest} from "../components";
+import NotFound from "components/NotFound/NotFound"
 
 export function Routes() {
   let element = useRoutes([
     {
       path: "/",
       element: <HomePage />,
+    },
+    {
+      path: "*",
+      element: <NotFound />,
     },
    
   ]);
