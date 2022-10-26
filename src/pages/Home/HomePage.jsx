@@ -1,11 +1,11 @@
 import React from "react";
-import { Inbox } from "components";
+import PostsTable from "../../components/PostsTable/PostsTable"
 
 
 export default function HomePage() {
   return (
     <div>
-     <Inbox />
+ <PostsTable />
     </div>
   );
 }
