@@ -169,6 +169,9 @@ function UsersTable() {
           },
         },
       }}
+      localeText={{
+        toolbarFilters:"جستجو"
+      }}
       pageSize={pageSize}
       rowsPerPageOptions={[10, 20, 50]}
       disableSelectionOnClick

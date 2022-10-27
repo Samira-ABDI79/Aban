@@ -157,7 +157,9 @@ return (
       components={{
         Toolbar: CustomToolbar,
       }}
-    
+      localeText={{
+        toolbarFilters:"جستجو"
+      }}
       rowsPerPageOptions={[10]}
     />
     

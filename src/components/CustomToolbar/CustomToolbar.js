@@ -14,7 +14,7 @@ function CustomToolbar() {
     return (
       <GridToolbarContainer >
        
-        <GridToolbarFilterButton  aria-valuetext="جستجو" defaultValue="jkdh" aria-valuemax="جستجو"/>
+        <GridToolbarFilterButton />
        
       </GridToolbarContainer>
     );

@@ -261,6 +261,9 @@ const DialogData={
         components={{
           Toolbar: CustomToolbar,
         }}
+        localeText={{
+          toolbarFilters:"جستجو"
+        }}
         pageSize={5}
         // rowsPerPageOptions={[10, 20, 50]}
         disableSelectionOnClick
