@@ -8,21 +8,7 @@ import {
   
     Link,
   } from "@mui/material";
-//   import React, { useEffect, useState } from "react";
 
-  
-//   const [comments, setComments] = useState([]);
-//   const [deletedCommentId, setDeletedCommentId] = useState("");
-//   const [open, setOpen] = useState(false);
-//   const [pageSize, setPageSize] = useState(10);
-//   const [rowCount, setRowCount] = useState(1);
-//   const [isLoading, setIsLoading] = useState(true);
-//   const [page, setPage] = useState(2);
-//   const handleClose = () => setOpen(false);
-//   const handleOpen = () => setOpen(true);
-//   const handleDelete = ()=>{
-
-//   }
 
 export const recordsCommends=[{
     id:"1263",
@@ -93,53 +79,81 @@ export const recordsCommends=[{
   
   ]
 
-//   export const columnsComments = [
-//     { field: "id", headerName: "ID", width: 70, type: "number"},
-//     {
-//       field: "postID",
-//       headerName: "Post ID",
-//       width: 150,
-//       renderCell: (record) => {
-//         console.log(record?.row);
-//         return (
-//           <a
-//             href={`/api/posts/${record?.row?.postID}`}
-//             target="_blank"
-//             rel="noreferrer"
-//           >
-//             {record.row.postID}
-//           </a>
-//         );
-//       },
-//     },
-//     { field: "caption", headerName: "Comment", width:250 , sortable: true/false},
-//     {
-//       field: "action",
-//       headerName: "Action",
-//       width: 150,
-//       sortable: false,
-//       filterable: false,
-//       hideable: false,
-//       renderCell: (record) => (
-//         <Button
-//           id={record.id}
-//           sx={{
-//             display: "flex",
-//             alignItems: "start",
-//             justifyContent: "center",
-//           }}
-//           // startIcon={<DeleteIcon />}
-//           variant="contained"
-//           color="error"
-//           size="small"
-//           onClick={() => {
-//             setDeletedCommentId(() => record.row.postID);
-//             console.log("Comment record", record.row.postID);
-//             handleOpen();
-//           }}
-//         >
-//           Delete
-//         </Button>
-//       ),
-//     },
-//   ];
+
+export 
+  
+const Userrecords =  [
+   {
+    id: 1,
+    userID: 11,
+    username: "samira",
+    joinDate: "joind Data",
+    lastSeen: "jgbh",
+    userType: "UserType",
+  },
+  {
+    id: 2,
+    userID: 22,
+    username: "samira",
+    joinDate: "joind Data",
+    lastSeen: "jgbh",
+    userType: "UserType",
+  },
+  {
+    id: 3,
+    userID: 33,
+    username: "samira",
+    joinDate: "joind Data",
+    lastSeen: "jgbh",
+    userType: "UserType",
+  },
+  {
+    id: 4,
+    userID: 44,
+    username: "roya",
+    joinDate: "joind Data",
+    lastSeen: "jgbh",
+    userType: "UserType",
+  },
+  {
+    id: 5,
+    userID: 55,
+    username: "samira",
+    joinDate: "joind Data",
+    lastSeen: "jgbh",
+    userType: "UserType",
+  },
+  {
+    id: 6,
+    userID: 66,
+    username: "samira",
+    joinDate: "joind Data",
+    lastSeen: "jgbh",
+    userType: "UserType",
+  },
+
+  {
+    id: 7,
+    userID: 77,
+    username: "samira",
+    joinDate: "joind Data",
+    lastSeen: "jgbh",
+    userType: "UserType",
+  },
+  {
+    id: 8,
+    userID: 88,
+    username: "samira",
+    joinDate: "joind Data",
+    lastSeen: "jgbh",
+    userType: "UserType",
+  },
+  {
+    id: 9,
+    userID: 99,
+    username: "samira",
+    joinDate: "joind Data",
+    lastSeen: "jgbh",
+    userType: "UserType",
+  },
+]

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import CustomToolbar from "../CustomToolbar/CustomToolbar"
 
-import {recordsCommends} from "../Data/Data"
+import {Userrecords} from "../Data/Data"
 
 import { DataGrid, getGridNumericOperators } from '@mui/x-data-grid';
 import { useDemoData } from '@mui/x-data-grid-generator';
@@ -91,59 +91,17 @@ const VISIBLE_FIELDS = ['name', 'rating', 'country', 'dateCreated', 'isAdmin'];
   const handleDelete = ()=>{
 
   }
-const data={
-  "columns": [
-
-    { field: "id", headerName: "ID", width: 70, type: "number"},
-    {
-      field: "postID",
-      headerName: "Post ID",
-      width: 150,
-      renderCell: (record) => {
-        console.log(record?.row);
-        return (
-          <a
-            href={`/api/posts/${record?.row?.postID}`}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {record.row.postID}
-          </a>
-        );
-      },
-    },
-    { field: "caption", headerName: "Comment", width:250 , sortable: true/false},
-    {
-      field: "action",
-      headerName: "Action",
-      width: 150,
-      sortable: false,
-      filterable: false,
-      hideable: false,
-      renderCell: (record) => (
-        <Button
-          id={record.id}
-          sx={{
-            display: "flex",
-            alignItems: "start",
-            justifyContent: "center",
-          }}
-          // startIcon={<DeleteIcon />}
-          variant="contained"
-          color="error"
-          size="small"
-          onClick={() => {
-            setDeletedCommentId(() => record.row.postID);
-            console.log("Comment record", record.row.postID);
-            handleOpen();
-          }}
-        >
-          Delete
-        </Button>
-      ),
-    },
-  ]
-}
+  const data={
+    "columns":[
+      { field: "id", headerName: "ID", width: 70, type: "number" },
+      { field: "userID", headerName: "User ID", width: 150 },
+      { field: "username", headerName: "User name", width: 200 },
+      { field: "joinDate", headerName: "Joined In", width: 200 },
+      { field: "lastSeen", headerName: "Last Seen ", width: 200 },
+      { field: "userType", headerName: "User Type", width: 100 },
+    ]
+  
+  }
 const DialogData={
   question:"آیا از حذف این کامنت اطمینان دارید ؟",
   description:"برای تایید و حذف کامنت ,دکمه پاک کردن را فشار دهید",
@@ -153,7 +111,7 @@ const DialogData={
   const columns = React.useMemo(
     () =>
       data.columns.map((col) => {
-        if (col.field === 'rating') {
+        if (col.field === 'username') {
           return {
             ...col,
             filterOperators: getGridNumericOperators()
@@ -204,14 +162,14 @@ const DialogData={
         </DialogActions>
       </Dialog>
       <DataGrid
-        rows={recordsCommends}
+        rows={Userrecords}
         columns={columns}
         initialState={{
           ...data.initialState,
           filter: {
             filterModel: {
               items: [
-                { id: "9", columnField: 'caption', value: 'jhkjy', },
+                { id: 1, columnField: 'username', value: 'samira', },
               
               ],
             },
@@ -219,9 +177,7 @@ const DialogData={
         }}
         disableColumnMenu
         disableColumnSelector
-        components={{
-          Toolbar: CustomToolbar,
-        }}
+       
         pageSize={10}
         rowsPerPageOptions={[10, 20, 50]}
         disableSelectionOnClick
