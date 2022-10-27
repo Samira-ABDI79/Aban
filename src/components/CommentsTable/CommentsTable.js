@@ -5,7 +5,9 @@ import {recordsCommends} from "../Data/Data"
 
 import { DataGrid, getGridNumericOperators } from '@mui/x-data-grid';
 
-import React, {  useState, } from "react";
+import { useMutation } from 'react-query'
+import axios from 'axios'
+import React, { Fragment, useState, } from "react";
 import {
   Button,
   Dialog,
@@ -79,12 +81,49 @@ RatingInputValue.propTypes = {
 const VISIBLE_FIELDS = ['name', 'rating', 'country', 'dateCreated', 'isAdmin'];
 
  function CustomInputComponent() {
+
+
+  //code react quary samira
+
+// ***************************************************
+
+// async function fetchComments(){
+//   const {data} = await axios.get('https://jsonplaceholder.typicode.com/posts')    
+//   return data
+// }
+// const {data, error, isError, isLoading } = useQuery('comments', fetchComments)
+// const deleteComments = async (data) => {
+//   const response = await axios.delete('https://jsonplaceholder.typicode.com/posts', data);
+//   return response.data;
+// };
+
+// const { mutate, isLoading, isError, error } = useMutation(deleteComments, {
+//   onSuccess: data => {
+//     // setPosts([...comments, data]);
+//     console.log("با موفقیت حذف شد")
+//   },
+//   onError: () => {
+//    console.log("حذف  کامنت با خطا مواجه شد")
+//   },
+//   onSettled: () => {
+//   }
+// });
+
+
+// //call delete function width delete object 
+// mutate({ 
+//   title: "post title sample",
+//   body: "post description sample",
+//   userId: 1,
+//   postDate: new Date() 
+// });
+//code react quary samira
   const [comments, setComments] = useState([]);
   const [deletedCommentId, setDeletedCommentId] = useState("");
   const [open, setOpen] = useState(false);
   const [pageSize, setPageSize] = useState(10);
   const [rowCount, setRowCount] = useState(1);
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(2);
   const handleClose = () => setOpen(false);
   const handleOpen = () => setOpen(true);
