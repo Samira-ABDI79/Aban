@@ -86,11 +86,11 @@ function UsersTable() {
 
 // ***************************************************
 
-// async function fetchPosts(){
-//   const {data} = await axios.get('https://jsonplaceholder.typicode.com/posts')    
+// async function fetchUsers(){
+//   const {data} = await axios.get('https://jsonplaceholder.typicode.com/Users')    
 //   return data
 // }
-// const {data, error, isError, isLoading } = useQuery('users', fetchPosts)
+// const {data, error, isError, isLoading } = useQuery('users', fetchUsers)
 
 
 // if(isError){

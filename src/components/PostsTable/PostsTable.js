@@ -1,13 +1,15 @@
 import { CircularProgress } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
-// import axios from "api/axios";
+
+import {useQuery} from 'react-query'
+import axios from 'axios'
 import React, { useEffect, useState } from "react";
 import CustomToolbar from "../CustomToolbar/CustomToolbar"
 
 function PostsTable() {
   const [posts, setPosts] = useState([]);
   const [pageSize, setPageSize] = useState(10);
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
 
   // useEffect(() => {
   //   const fetchPosts = async () => {
@@ -137,6 +139,17 @@ actions:"actions",},
                 actions:"actions",},
 
 ]
+
+// ***********************************************
+async function fetchPosts(){
+  const {data} = await axios.get( `/api/posts?SkipCount=0&MaxResultCount=1000`)    
+  return data
+}
+const {data, error, isError, isLoading } = useQuery('posts', fetchPosts)
+if(isError){
+  return console.log(error.message)
+}
+// *****************************************
 return (
   <div style={{ height: "90vh",padding:"20px"}}>
      
