@@ -1,12 +1,11 @@
-import React, { useEffect, useState,useMemo } from "react";
-import {recordsCommends} from "../Data/Data"
-import {
-  DataGrid,
-  getGridNumericOperators
-
-} from '@mui/x-data-grid';
 import PropTypes from 'prop-types';
+import CustomToolbar from "../CustomToolbar/CustomToolbar"
 
+import {recordsCommends} from "../Data/Data"
+
+import { DataGrid, getGridNumericOperators } from '@mui/x-data-grid';
+
+import React, {  useState, } from "react";
 import {
   Button,
   Dialog,
@@ -14,18 +13,72 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
+  TextField,
 Box,
-  Link,
+  
 } from "@mui/material";
 
+function RatingInputValue(props) {
+  const { item, applyValue, focusElementRef } = props;
 
-import { useQuery } from "@tanstack/react-query";
-import CustomToolbar from "../CustomToolbar/CustomToolbar"
+  const ratingRef = React.useRef(null);
+  React.useImperativeHandle(focusElementRef, () => ({
+    focus: () => {
+      ratingRef.current
+        .querySelector(`input[value="${Number(item.value) || ''}"]`)
+        .focus();
+    },
+  }));
 
+  const handleFilterChange = (event, newValue) => {
+    applyValue({ ...item, value: newValue });
+  };
 
+  return (
+    <Box
+      sx={{
+        display: 'inline-flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        height: 48,
+        pl: '20px',
+      }}
+    >
+      <TextField
+        name="custom-rating-filter-operator"
+        placeholder="Filter value"
+        value={Number(item.value)}
+        onChange={handleFilterChange}
+        precision={0.5}
+        ref={ratingRef}
+      />
+    </Box>
+  );
+}
 
-function CommentsTable() {
+RatingInputValue.propTypes = {
+  applyValue: PropTypes.func.isRequired,
+  focusElementRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({
+      current: PropTypes.any.isRequired,
+    }),
+  ]),
+  item: PropTypes.shape({
+   
+    columnField: PropTypes.string.isRequired,
+  
+    id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+   
+    operatorValue: PropTypes.string,
+   
+    value: PropTypes.any,
+  }).isRequired,
+};
 
+const VISIBLE_FIELDS = ['name', 'rating', 'country', 'dateCreated', 'isAdmin'];
+
+ function CustomInputComponent() {
   const [comments, setComments] = useState([]);
   const [deletedCommentId, setDeletedCommentId] = useState("");
   const [open, setOpen] = useState(false);
@@ -38,7 +91,9 @@ function CommentsTable() {
   const handleDelete = ()=>{
 
   }
-  const columnsComments = [
+const data={
+  "columns": [
+
     { field: "id", headerName: "ID", width: 70, type: "number"},
     {
       field: "postID",
@@ -87,15 +142,34 @@ function CommentsTable() {
         </Button>
       ),
     },
-  ];
+  ]
+}
 const DialogData={
   question:"آیا از حذف این کامنت اطمینان دارید ؟",
   description:"برای تایید و حذف کامنت ,دکمه پاک کردن را فشار دهید",
   confrim:"پاک کردن",
   close:"لغو"
 }
-
-  
+  const columns = React.useMemo(
+    () =>
+      data.columns.map((col) => {
+        if (col.field === 'rating') {
+          return {
+            ...col,
+            filterOperators: getGridNumericOperators()
+              .filter((operator) => operator.value !== 'isAnyOf')
+              .map((operator) => ({
+                ...operator,
+                InputComponent: operator.InputComponent
+                  ? RatingInputValue
+                  : undefined,
+              })),
+          };
+        }
+        return col;
+      }),
+    [data.columns],
+  );
 
   return (
     <div style={{ height: "90vh",padding:"20px"}}>
@@ -131,11 +205,24 @@ const DialogData={
       </Dialog>
       <DataGrid
         rows={recordsCommends}
-        columns={columnsComments }
+        columns={columns}
+        initialState={{
+          ...data.initialState,
+          filter: {
+            filterModel: {
+              items: [
+                { id: "9", columnField: 'caption', value: 'jhkjy', },
+              
+              ],
+            },
+          },
+        }}
         disableColumnMenu
         disableColumnSelector
-       
-        pageSize={pageSize}
+        components={{
+          Toolbar: CustomToolbar,
+        }}
+        pageSize={10}
         rowsPerPageOptions={[10, 20, 50]}
         disableSelectionOnClick
        
@@ -143,14 +230,11 @@ const DialogData={
           overflowX: "hidden",
           height:"700px"
         }}
-        components={{
-          Toolbar: CustomToolbar,
-        }}
+       
         rowsPerPageOptions={[10]}
-      />
       
+      />
     </div>
   );
 }
-
-export default CommentsTable;
+export default CustomInputComponent;
