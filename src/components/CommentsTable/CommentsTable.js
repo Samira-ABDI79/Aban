@@ -222,15 +222,15 @@ const DialogData={
         components={{
           Toolbar: CustomToolbar,
         }}
-        pageSize={10}
-        rowsPerPageOptions={[10, 20, 50]}
+        pageSize={5}
+        // rowsPerPageOptions={[10, 20, 50]}
         disableSelectionOnClick
        
         sx={{
           overflowX: "hidden",
           height:"700px"
         }}
-       
+       onPageChange={()=>console.log("page change")}
         rowsPerPageOptions={[10]}
       
       />
