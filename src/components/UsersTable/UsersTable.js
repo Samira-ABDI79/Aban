@@ -16,7 +16,7 @@ Box,
   
 } from "@mui/material";
 
-function RatingInputValue(props) {
+function SearchInputValue(props) {
 
 
 
@@ -58,7 +58,7 @@ function RatingInputValue(props) {
   );
 }
 
-RatingInputValue.propTypes = {
+SearchInputValue.propTypes = {
   applyValue: PropTypes.func.isRequired,
   focusElementRef: PropTypes.oneOfType([
     PropTypes.func,
@@ -130,7 +130,7 @@ function UsersTable() {
   const columns = React.useMemo(
     () =>
       data.columns.map((col) => {
-        if (col.field === 'rating') {
+        if (col.field === 'search') {
           return {
             ...col,
             filterOperators: getGridNumericOperators()
@@ -138,7 +138,7 @@ function UsersTable() {
               .map((operator) => ({
                 ...operator,
                 InputComponent: operator.InputComponent
-                  ? RatingInputValue
+                  ? SearchInputValue
                   : undefined,
               })),
           };

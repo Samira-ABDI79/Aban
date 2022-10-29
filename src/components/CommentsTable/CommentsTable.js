@@ -1,10 +1,7 @@
 import PropTypes from 'prop-types';
 import CustomToolbar from "../CustomToolbar/CustomToolbar"
-
 import {recordsCommends} from "../Data/Data"
-
 import { DataGrid, getGridNumericOperators } from '@mui/x-data-grid';
-
 import { useMutation } from 'react-query'
 import axios from 'axios'
 import React, { Fragment, useState, } from "react";
@@ -20,13 +17,13 @@ Box,
   
 } from "@mui/material";
 
-function RatingInputValue(props) {
+function SearchInputValue(props) {
   const { item, applyValue, focusElementRef } = props;
 
-  const ratingRef = React.useRef(null);
+  const searchRef = React.useRef(null);
   React.useImperativeHandle(focusElementRef, () => ({
     focus: () => {
-      ratingRef.current
+      searchRef.current
         .querySelector(`input[value="${Number(item.value) || ''}"]`)
         .focus();
     },
@@ -47,18 +44,18 @@ function RatingInputValue(props) {
       }}
     >
       <TextField
-        name="custom-rating-filter-operator"
+        name="custom-search-filter-operator"
         placeholder="Filter value"
         value={Number(item.value)}
         onChange={handleFilterChange}
         precision={0.5}
-        ref={ratingRef}
+        ref={searchRef}
       />
     </Box>
   );
 }
 
-RatingInputValue.propTypes = {
+SearchInputValue.propTypes = {
   applyValue: PropTypes.func.isRequired,
   focusElementRef: PropTypes.oneOfType([
     PropTypes.func,
@@ -78,7 +75,7 @@ RatingInputValue.propTypes = {
   }).isRequired,
 };
 
-const VISIBLE_FIELDS = ['name', 'rating', 'country', 'dateCreated', 'isAdmin'];
+
 
  function CustomInputComponent() {
 
@@ -99,7 +96,7 @@ const VISIBLE_FIELDS = ['name', 'rating', 'country', 'dateCreated', 'isAdmin'];
 
 // const { mutate, isLoading, isError, error } = useMutation(deleteComments, {
 //   onSuccess: data => {
-//     // setPosts([...comments, data]);
+//    
 //     console.log("با موفقیت حذف شد")
 //   },
 //   onError: () => {
@@ -123,7 +120,7 @@ const VISIBLE_FIELDS = ['name', 'rating', 'country', 'dateCreated', 'isAdmin'];
   const [open, setOpen] = useState(false);
   const [pageSize, setPageSize] = useState(10);
   const [rowCount, setRowCount] = useState(1);
-  // const [isLoading, setIsLoading] = useState(true);
+  
   const [page, setPage] = useState(2);
   const handleClose = () => setOpen(false);
   const handleOpen = () => setOpen(true);
@@ -192,7 +189,7 @@ const DialogData={
   const columns = React.useMemo(
     () =>
       data.columns.map((col) => {
-        if (col.field === 'rating') {
+        if (col.field === 'search') {
           return {
             ...col,
             filterOperators: getGridNumericOperators()
@@ -200,7 +197,7 @@ const DialogData={
               .map((operator) => ({
                 ...operator,
                 InputComponent: operator.InputComponent
-                  ? RatingInputValue
+                  ? SearchInputValue
                   : undefined,
               })),
           };

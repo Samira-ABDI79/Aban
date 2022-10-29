@@ -4,6 +4,7 @@ import NotFound from "components/NotFound/NotFound"
 import CommentsTable from "components/CommentsTable/CommentsTable"
 import UsersTable from "components/UsersTable/UsersTable"
 import PostsTable from "components/PostsTable/PostsTable"
+
 export function Routes() {
   let element = useRoutes([
     {
@@ -26,6 +27,7 @@ export function Routes() {
       path: "/posts-table",
       element: <PostsTable />,
     },
+ 
   ]);
 
   return element;
