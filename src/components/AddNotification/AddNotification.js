@@ -9,32 +9,13 @@ import {
     } from "@mui/material";
     import React, {  useState } from "react";
   
-    import {FormWrapper} from  "./AddNotificationStyle"
+    import {FormWrapper,
+      inputErrorStyles,
+      message,
+      buttonStyle
+    } from  "./AddNotificationStyle"
   
   
-    const inputErrorStyles = {
-      "& .MuiInput-root::before ": {
-        borderBottom: "1px solid #f03637",
-      },
-      "& .MuiInput-root:hover::before": {
-        borderBottom: "2px solid #f03637",
-      },
-      "& .MuiInput-root::after ": {
-        borderBottom: "2px solid #f03637",
-      },
-    };
-    const buttonStyle={
-    
-      color: "#fff",
-      backgroundColor: "#26a69a",
-      textAlign: "center",
-      letterSpacing: ".5px",
-      transition: ".2s ease-out",
-      cursor: "pointer",
-      "&:hover": {
-        backgroundColor: "#26a69a",
-      },
-    }
   function AddNotification(){
    
      const [enteredText, setEnteredText] = useState("");
@@ -77,9 +58,10 @@ import {
     
     const submitHandler = (event) => {
       // TextErrorMessage = "Text is required";
+      console.log("hi")
 
       event.preventDefault();
-      if (enteredText.trim() === "" ) {
+      if (!TitleTouched ) {
         TextErrorMessage = "Text is required";
         TextIsValid = false;
       }

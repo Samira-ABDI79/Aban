@@ -38,3 +38,30 @@ export const FormWrapper = styled(Box)(({ theme }) => ({
       },
     },
   }));
+
+  
+export   const inputErrorStyles = {
+    "& .MuiInput-root::before ": {
+      borderBottom: "1px solid #f03637",
+    },
+    "& .MuiInput-root:hover::before": {
+      borderBottom: "2px solid #f03637",
+    },
+    "& .MuiInput-root::after ": {
+      borderBottom: "2px solid #f03637",
+    },
+  };
+  export const buttonStyle={
+  
+    color: "#fff",
+    backgroundColor: "#26a69a",
+    textAlign: "center",
+    letterSpacing: ".5px",
+    transition: ".2s ease-out",
+    cursor: "pointer",
+    "&:hover": {
+      backgroundColor: "#26a69a",
+    },
+  }
+
+  export const message={ color: "#f03637", fontSize: "14px", fontWeight: 500 }
