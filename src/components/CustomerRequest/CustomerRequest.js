@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {Avatar, Box,Container, Stack, Typography,Button} from '@mui/material';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
+// import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import image from "./image (5).png"
 import { Link } from "react-router-dom";
 
@@ -39,7 +39,7 @@ function CustomerRequest(){
     >دسته درخواست</Typography>
     <Typography variant="body1" component="p"  align="right">متن درخواست</Typography>
     <Stack direction="row"  justifyContent="start" spacing={2} mb={5}>
-        <AccessTimeIcon  color="success"/>
+        {/* <AccessTimeIcon  color="success"/> */}
      <Typography >   ۲ آبان ۱۴۰۱، ساعت ۲۱:۴۴</Typography>
         </Stack>
 
