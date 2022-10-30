@@ -4,7 +4,6 @@ import {Avatar, Box,Container, Stack, Typography,Button} from '@mui/material';
 import image from "./image (5).png"
 import { Link } from "react-router-dom";
 
-// npm install @material-ui/icons
 
 import {buttonStyle,ContainerStyle} from "../Inbox/InboxStyle"
 
@@ -37,20 +36,15 @@ function CustomerRequest(){
         lineHeight: "1.25",
         color: "#0a66c2",}}
     >دسته درخواست</Typography>
-    <Typography variant="body1" component="p"  align="right">متن درخواست</Typography>
-    <Stack direction="row"  justifyContent="start" spacing={2} mb={5}>
+    
+    <Stack direction="row"  justifyContent="end" spacing={2} mb={5}>
         {/* <AccessTimeIcon  color="success"/> */}
      <Typography >   ۲ آبان ۱۴۰۱، ساعت ۲۱:۴۴</Typography>
         </Stack>
 
 </Box>
-{/* Avatar */}
-    <Stack justifyContent="center" alignItems="center">
-    <Avatar alt="Remy Sharp" src={image} mt={3}  sx={{width:"150px", height:"150px"}}/>
-    <Typography variant="body2" mt={3} component="p">مشاهده اطلاعات بیشتر درباره کاربر</Typography>
-    <Button variant="outlined" size="small" sx={{width:"30%", marginTop:"20px"}}>اطلاعات بیشتر</Button>
-    </Stack>
 
+<Typography variant="body1" component="p"  align="center">متن درخواست</Typography>
   </Box>
 </Container>
 </>    

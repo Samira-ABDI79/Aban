@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import {RequestData} from "../Data/Data"
 import Avatar from '@mui/material/Avatar';
-
+import OpenInNewIco from "@mui/icons-material/OpenInNew"
 import Typography from '@mui/material/Typography';
 
 import avatarImg from "./avatarImg.jpg"
