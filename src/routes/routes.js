@@ -1,10 +1,21 @@
 import { useRoutes } from "react-router-dom";
 import HomePage from "pages/Home/HomePage";
-import Notification from "components/Notification/Notification";
-import AddNotification from "components/AddNotification/AddNotification";
-import List1 from "components/List/List";
-import Inbox from "../components/Inbox/Inbox";
-import RequestInbox from "../components/RequestInbox/RequestInbox"
+import {
+  CustomerRequest,
+  Inbox,
+  CustomerResponse,
+  CommentsTable,
+  AddNotification,
+  Notification,
+  RequestInbox,
+  List1,
+  
+  Login,
+  NotFound,
+  PostsTable,
+  UsersTable,
+
+} from "../components";
 import RequestList from "../components/RequestList/RequestList "
 export function Routes() {
   let element = useRoutes([
@@ -38,6 +49,33 @@ export function Routes() {
   {
     path:"/request-inbox",
     element:<RequestInbox />
+  },
+
+
+  {
+    path:"/customer-request",
+    element:<CustomerRequest />
+  }, {
+    path:"/customer-response",
+    element:<CustomerResponse />
+  }, {
+    path:"/comments-table",
+    element:<CommentsTable />
+  }, {
+    path:"/login",
+    element:<Login />
+  },
+  {
+    path:"/not-found",
+    element:<NotFound />
+  },
+  {
+    path:"/posts-table",
+    element:<PostsTable />
+  },
+  {
+    path:"/users-table",
+    element:<UsersTable />
   },
   ]);
 
