@@ -2,7 +2,7 @@ import React from "react";
 import {Container , CardMedia, Typography, Button, Box, Stack} from "@mui/material"
 import  erorr404 from "./404-SVG-Animated-Page-Concept.png"
 import { Link } from "react-router-dom";
-import {ButtonStyle,LinkStyle,titrStyle,textStyle} from "./NotFoundStyle"
+import {ButtonStyle,LinkStyle,titrStyle,textStyle} from "./NotFound.style"
 function NotFound() {
   return (
     <>

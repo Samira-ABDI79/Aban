@@ -2,11 +2,10 @@
 import { DataGrid, getGridNumericOperators } from '@mui/x-data-grid';
 
 import PropTypes from 'prop-types';
-import {useQuery} from 'react-query'
-import axios from 'axios'
+
 import CustomToolbar from "../CustomToolbar/CustomToolbar"
 import {Userrecords} from "../Data/Data"
-import React, { useEffect, useState ,useMemo} from "react";
+import React, {  useState } from "react";
 
 
 import {
@@ -82,39 +81,11 @@ SearchInputValue.propTypes = {
 
 function UsersTable() {
 
-//code react quary samira
-
-// ***************************************************
-
-// async function fetchUsers(){
-//   const {data} = await axios.get('https://jsonplaceholder.typicode.com/Users')    
-//   return data
-// }
-// const {data, error, isError, isLoading } = useQuery('users', fetchUsers)
-
-
-// if(isError){
-//  console.log(error.message)
-// }
-//code react quary samira
-
-
-// ***************************************************
-  // const { auth } = useAuth();
   const [pageSize, setPageSize] = useState(10);
   const [users, setUsers] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  // const records = users.map((user, index) => {
-  //   return {
-  //     id: index + 101,
-  //     userID: user.profileUserId,
-  //     username: user.displayName,
-  //     joinDate: user.registerDate,
-  //     lastSeen: user.lastLogin || "",
-  //     userType: user.roles[0].item2 || "User",
-  //   };
-  // });
+  
   const data={
     "columns":[
       { field: "id", headerName: "ID", width: 70, type: "number" },

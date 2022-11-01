@@ -9,9 +9,9 @@ import {
   Notification,
   RequestInbox,
   List1,
-  
-  Login,
   NotFound,
+  Login,
+  
   PostsTable,
   UsersTable,
 
@@ -32,7 +32,10 @@ export function Routes() {
       element: <AddNotification />,
     },
 
-
+    {
+      path:"/*",
+      element:<NotFound />
+    },
    
    {
      path:"/list",

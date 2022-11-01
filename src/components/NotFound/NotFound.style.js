@@ -1,15 +1,16 @@
 export const ButtonStyle={
   
-    backgroundColor: "#8a00c2",
+    backgroundColor: "#4a42d1",
     color: "#fff",
     display: "inline-flex",
     minWidth: "7rem",
    
     textAlign: "right",
-    marginTop:"20px", borderColor:"#8a00c2",
+    marginTop:"20px", borderColor:"#4a42d1",
     "&:hover": {
-        backgroundColor: "#ca5cdd",
-        borderColor:"#8a00c2",
+        backgroundColor: "#4a42d1",
+        borderColor:"#4a42d1",
+        opacity:"0.9"
       },
 }
 

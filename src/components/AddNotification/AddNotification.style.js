@@ -54,13 +54,13 @@ export   const inputErrorStyles = {
   export const buttonStyle={
   
     color: "#fff",
-    backgroundColor: "#26a69a",
+    backgroundColor: "#4a42d1",
     textAlign: "center",
     letterSpacing: ".5px",
     transition: ".2s ease-out",
     cursor: "pointer",
     "&:hover": {
-      backgroundColor: "#26a69a",
+      backgroundColor: "#4a42d1",
     },
   }
 

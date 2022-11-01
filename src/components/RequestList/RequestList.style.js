@@ -6,8 +6,9 @@ export const textStyle={
 export const ButtonStyle={
     fontSize:"20px",
     fontFamily:"sans-serif",
-    color:"#107abe",
-    fontWeight:"600",
+    color:"#fff",
+    fontWeight:"400",
+    backgroundColor:"#4a42d1"
 }
 
 

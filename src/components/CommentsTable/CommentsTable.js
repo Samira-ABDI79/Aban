@@ -2,9 +2,8 @@ import PropTypes from 'prop-types';
 import CustomToolbar from "../CustomToolbar/CustomToolbar"
 import {recordsCommends} from "../Data/Data"
 import { DataGrid, getGridNumericOperators } from '@mui/x-data-grid';
-import { useMutation } from 'react-query'
-import axios from 'axios'
-import React, { Fragment, useState, } from "react";
+
+import React, {  useState, } from "react";
 import {
   Button,
   Dialog,
@@ -80,41 +79,6 @@ SearchInputValue.propTypes = {
  function CustomInputComponent() {
 
 
-  //code react quary samira
-
-// ***************************************************
-
-// async function fetchComments(){
-//   const {data} = await axios.get('https://jsonplaceholder.typicode.com/posts')    
-//   return data
-// }
-// const {data, error, isError, isLoading } = useQuery('comments', fetchComments)
-// const deleteComments = async (data) => {
-//   const response = await axios.delete('https://jsonplaceholder.typicode.com/posts', data);
-//   return response.data;
-// };
-
-// const { mutate, isLoading, isError, error } = useMutation(deleteComments, {
-//   onSuccess: data => {
-//    
-//     console.log("با موفقیت حذف شد")
-//   },
-//   onError: () => {
-//    console.log("حذف  کامنت با خطا مواجه شد")
-//   },
-//   onSettled: () => {
-//   }
-// });
-
-
-// //call delete function width delete object 
-// mutate({ 
-//   title: "post title sample",
-//   body: "post description sample",
-//   userId: 1,
-//   postDate: new Date() 
-// });
-//code react quary samira
   const [comments, setComments] = useState([]);
   const [deletedCommentId, setDeletedCommentId] = useState("");
   const [open, setOpen] = useState(false);

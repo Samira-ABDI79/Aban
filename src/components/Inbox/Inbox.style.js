@@ -1,14 +1,14 @@
 export  const buttonStyle={
     textDecoration: "none",
     color: "#fff",
-    backgroundColor: "#26a69a",
+    backgroundColor: "#4a42d1",
     textAlign: "center",
     letterSpacing: ".5px",
     transition: ".2s ease-out",
     cursor: "pointer",
     float :"right",
     "&:hover": {
-      backgroundColor: "#26a69a",
+      backgroundColor: "#4a42d1",
     },
   }
 export const ContainerStyle={

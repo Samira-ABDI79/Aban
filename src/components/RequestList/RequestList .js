@@ -32,8 +32,8 @@ export default function RequestList() {
          {Info.map((item) => (
               
                 <li style={{listStyleType:"none" , display:"flex", padding:"10px 0px",justifyContent:"space-between", width:"100%"}}>
-                  <Button variant="contained" color="secondary" onClick={()=> id=`${item.id}`}>
-                  <Link to="/inbox" style={{textDecoration: "none"}}  >مشاهده</Link>
+                  <Button variant="contained" sx={ButtonStyle} onClick={()=> id=`${item.id}`}>
+                  <Link to="/inbox" style={{textDecoration: "none",color:"#fff"}}  >مشاهده</Link>
                   </Button>
                          <Typography align="right" sx={textStyle}>{item.time}</Typography>
                        
