@@ -1,14 +1,14 @@
 import * as React from 'react';
 
-import {Modal,
+import {
 Box,
-Button,
+
 Typography,
 
 Container
 } from '@mui/material';
 
-import {ButtonStyle,titrStyle} from "../RequestList/RequestList.style" 
+import {titrStyle} from "../RequestList/RequestList.style" 
 import RequestList from 'components/RequestList/RequestList ';
 
 
@@ -26,9 +26,8 @@ const style = {
 };
 
 export default function RequestInbox() {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  
+ 
 
   return (
     <Container >

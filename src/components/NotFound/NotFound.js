@@ -1,5 +1,5 @@
 import React from "react";
-import {Container , CardMedia, Typography, Button, Box, Stack} from "@mui/material"
+import {Container , CardMedia, Typography, Button, Stack} from "@mui/material"
 import  erorr404 from "./404-SVG-Animated-Page-Concept.png"
 import { Link } from "react-router-dom";
 import {ButtonStyle,LinkStyle,titrStyle,textStyle} from "./NotFound.style"
@@ -10,8 +10,7 @@ function NotFound() {
 <Stack  justifyContent="center" alignItems="center" spacing={5}>
 <CardMedia 
 component="img"
-// height="600"
-// width="50px"
+
 sx={{width:"60%", height:"500px"}}
 image={erorr404}
 alt=""

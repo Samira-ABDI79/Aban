@@ -6,7 +6,7 @@ import {
   Container,
   CssBaseline,
   Box,
-  Avatar,
+
   Typography,
   TextField,
   Button,

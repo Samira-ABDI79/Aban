@@ -1,41 +1,15 @@
-import { CircularProgress } from "@mui/material";
+
 import { DataGrid } from "@mui/x-data-grid";
 
 import {useQuery} from 'react-query'
 import axios from 'axios'
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import CustomToolbar from "../CustomToolbar/CustomToolbar"
 
 function PostsTable() {
   const [posts, setPosts] = useState([]);
   const [pageSize, setPageSize] = useState(10);
-  // const [isLoading, setIsLoading] = useState(true);
-
-  // useEffect(() => {
-  //   const fetchPosts = async () => {
-  //     const response = await axios.get(
-  //       `/api/posts?SkipCount=0&MaxResultCount=1000`
-  //     );
-  //     console.log("Posts :", response.data);
-  //     setPosts(response.data.items);
-  //     setPageSize(response?.data?.items?.length);
-  //     setIsLoading(false);
-  //     return await response.data;
-  //   };
-
-  //   fetchPosts();
-  // }, []);
-  // console.log(posts);
-  // const records = posts.map((post, index) => {
-  //   return {
-  //     id: index + 101,
-  //     publisherID: post.postUser.displayName,
-  //     postID: post.id,
-  //     publishStatus: post.title,
-  //     viewCounts: post.rate,
-  //     commentsCounts: post.totalComments,
-  //   };
-  // });
+  
 
   const columns = [
     { field: "id", headerName: "ID", width: 70, type: "number" },

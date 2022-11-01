@@ -1,13 +1,17 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
 
-import Avatar from '@mui/material/Avatar';
+import {
+ 
+ Box,
+  Avatar,
+  Typography,
+ 
+} from "@mui/material";
 
-import Typography from '@mui/material/Typography';
 
 import avatarImg from "./avatarImg.jpg"
-import {textStyle , ButtonStyle} from "./List.style"
+import {textStyle } from "./List.style"
 
 function generate(element) {
   return [0, 1, 2].map((value) =>
