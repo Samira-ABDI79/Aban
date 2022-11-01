@@ -8,7 +8,7 @@ Stack,
 Container
 } from '@mui/material';
 import List1 from "../List/List"
-import {ButtonStyle,titrStyle} from "../List/ListStyle" 
+import {ButtonStyle,titrStyle} from "../List/List.style" 
 import AddNotification from 'components/AddNotification/AddNotification';
 
 const style = {

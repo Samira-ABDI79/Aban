@@ -13,7 +13,7 @@ import {
       inputErrorStyles,
       message,
       buttonStyle
-    } from  "./AddNotificationStyle"
+    } from  "./AddNotification.style"
   
   
   function AddNotification(){

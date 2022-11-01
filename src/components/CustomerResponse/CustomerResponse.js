@@ -9,7 +9,7 @@ import {
   } from "@mui/material";
   import DeleteIcon from "@mui/icons-material/Delete"
   import SendIcon from "@mui/icons-material/Send"
-  import {buttonStyle ,ContainerStyle,inputErrorStyles} from "../Inbox/InboxStyle"
+  import {buttonStyle ,ContainerStyle,inputErrorStyles} from "../Inbox/Inbox.style"
 
   import {  useState } from "react";
  let responseInformation="";

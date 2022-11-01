@@ -7,7 +7,7 @@ import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 
 import avatarImg from "./avatarImg.jpg"
-import {textStyle , ButtonStyle} from "./ListStyle"
+import {textStyle , ButtonStyle} from "./List.style"
 
 function generate(element) {
   return [0, 1, 2].map((value) =>

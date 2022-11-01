@@ -12,7 +12,7 @@ import {
   Button,
 } from "@mui/material";
 
-import {inputStyle,ErrorStyle,buttonStyle} from "./LoginStyle"
+import {inputStyle,ErrorStyle,buttonStyle} from "./Login.style"
 
 import { useNavigate } from "react-router-dom";
 import useAuth from "hooks/useAuth";

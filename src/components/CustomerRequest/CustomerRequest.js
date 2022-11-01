@@ -7,7 +7,7 @@ import { useState } from "react";
 import {RequestData} from "../Data/Data"
 
 import {id} from "../RequestList/RequestList "
-import {buttonStyle,ContainerStyle} from "../Inbox/InboxStyle"
+import {buttonStyle,ContainerStyle} from "../Inbox/Inbox.style"
 
 function CustomerRequest(){
   const [Info] = useState(RequestData);
